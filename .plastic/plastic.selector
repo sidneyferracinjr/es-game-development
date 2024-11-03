@@ -1,0 +1,4 @@
+repository "arcadeVideo@sidneyferracinjr@cloud"
+  path "/"
+    br "/main"
+    co "/main"
