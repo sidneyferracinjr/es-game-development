@@ -2,19 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class scriptNpc : MonoBehaviour
+public class scriptFundo : MonoBehaviour
 {
-    public float speed = 2.0f;
     private Rigidbody2D rbd;
-
-    private void OnTriggerEnter2D(Collider2D col)
-    {
-        Destroy(gameObject);
-        Destroy(col.gameObject);
-    }
-
+    public float speed;
+    // Start is called before the first frame update
     void Start()
     {
+        speed = 4.0f;
         rbd = GetComponent<Rigidbody2D>();
         rbd.velocity = new Vector2(0, -speed);
     }
@@ -22,9 +17,9 @@ public class scriptNpc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y < -Camera.main.orthographicSize)
+        if(transform.position.y < -10)
         {
-            Destroy(gameObject);
+            transform.position = new Vector2(0, 10);
         }
     }
 }
