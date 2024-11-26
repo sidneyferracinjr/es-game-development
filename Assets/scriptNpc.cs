@@ -9,6 +9,7 @@ public class scriptNpc : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D col)
     {
+        scriptPlacar.incrementarPlacar(1);
         Destroy(gameObject);
         Destroy(col.gameObject);
     }
